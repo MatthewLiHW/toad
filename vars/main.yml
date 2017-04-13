@@ -29,7 +29,7 @@ java_version:
 # JJB Configuration
 jenkins_job_builder_config_jenkins_user: admin
 jenkins_job_builder_config_jenkins_password: admin
-jenkins_job_builder_config_jenkins_url: "http://localhost:8080"
+jenkins_job_builder_config_jenkins_url: "http://localhost:8081"
 jenkins_job_builder_config_job_builder_recursive: True
 jenkins_job_builder_git_jobs_src: "https://github.com/redhat-nfvpe/jenkins-jobs.git"
 jenkins_job_builder_file_jobs_src: "./files/jenkins-jobs"
@@ -53,7 +53,7 @@ master_mirror_sync: false
 slave_mirror_sync: false
 
 # Enable ELK stack?
-elk_deployed: true
+elk_deployed: false
 
 # Logstash Configuration
 logstash_configuration_files:
@@ -69,7 +69,7 @@ elasticsearch_url: http://{{ elasticsearch_network_address }}:{{ elasticsearch_h
 elasticsearch_network_host: 0.0.0.0
 
 # FileBeat configuration
-filebeat_deployed: true
+filebeat_deployed: false
 filebeat_user: root
 filebeat_group: root
 filebeat_create_user: false

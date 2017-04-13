@@ -1,6 +1,13 @@
 # This inventry file is for container (docker case)
 # these names map to container name
 jenkins_master
-logstash
-elasticsearch
-kibana
+
+[jenkins_slave]
+slave01 ansible_connection=ssh ansible_host=10.112.213.212 ansible_user=ansible
+
+[jenkins_slave:vars]
+slave_description=TOAD Testing Node
+slave_remoteFS=/home/stack
+slave_port=22
+slave_credentialsId=stack-credential
+slave_label=toad

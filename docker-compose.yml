@@ -24,74 +24,7 @@ services:
       default:
         ipv4_address: 172.16.238.10
     ports:
-      - "8080:8080"
-
-  logstash:
-    build:
-      context: ./dockerfiles
-      dockerfile: centos7_base
-    container_name: logstash
-    entrypoint: /sbin/init
-    privileged: true
-    security_opt:
-      - seccomp:unconfined
-    volumes:
-      - /run
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-      - ./:/opt/toad
-      - ./container_data/logstash/config:/etc/logstash/conf.d
-      - ./container_data/logstash/log:/var/log/logstash/logstash.log
-    entrypoint: /sbin/init
-    networks:
-      default:
-        ipv4_address: 172.16.238.11
-    ports:
-      - "5044:5044"
-
-  elasticsearch:
-    build:
-      context: ./dockerfiles
-      dockerfile: centos7_base
-    container_name: elasticsearch
-    entrypoint: /sbin/init
-    privileged: true
-    security_opt:
-      - seccomp:unconfined
-    volumes:
-      - /run
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-      - ./:/opt/toad
-      - ./container_data/elasticsearch/log:/var/log/elasticsearch
-      - ./container_data/elasticsearch/data:/var/lib/elasticsearch
-      - ./container_data/elasticsearch/config:/etc/elasticsearch
-    entrypoint: /sbin/init
-    networks:
-      default:
-        ipv4_address: 172.16.238.12
-    ports:
-      - "9200:9200"
-
-  kibana:
-    build:
-      context: ./dockerfiles
-      dockerfile: centos7_base
-    container_name: kibana
-    entrypoint: /sbin/init
-    privileged: true
-    security_opt:
-      - seccomp:unconfined
-    volumes:
-      - /run
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-      - ./:/opt/toad
-      - ./container_data/kibana/config:/opt/kibana/config
-    entrypoint: /sbin/init
-    networks:
-      default:
-        ipv4_address: 172.16.238.13
-    ports:
-      - "443:443"
-      - "5601:5601"
+      - "8081:8081"
 
 networks:
     default:
